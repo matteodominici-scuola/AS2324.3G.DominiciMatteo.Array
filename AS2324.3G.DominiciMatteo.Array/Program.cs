@@ -65,6 +65,15 @@
                 }
             }
         }
+        static void StampaArray(double[] pesi, int[] eta)
+        {
+            for(int i=0;i < pesi.Length; i++)
+            {
+                Console.WriteLine($"Persona {i+1}:");
+                Console.WriteLine($"Peso {pesi[i]}kg.");
+                Console.WriteLine($"Età {eta[i]} anni.");
+            }
+        }
     }
 }
 
