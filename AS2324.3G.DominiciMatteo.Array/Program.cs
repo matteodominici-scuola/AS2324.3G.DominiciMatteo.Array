@@ -17,6 +17,7 @@
             Console.WriteLine($"Media pesi: {media}");
             Console.WriteLine($"Peso minimo: {min}");
             Console.WriteLine($"Peso massimo: {max}");
+            Ordina(ref pesi, ref eta);
         }
         static void CaricaVettori(ref double[] pesi, ref int[] eta)
         {
@@ -45,6 +46,24 @@
                 }
             }
             media = sommaPesi / pesi.Length;
+        }
+        static void Ordina(ref double[] pesi, ref int[] eta)
+        {
+            for (int i= 0;i < pesi.Length;i++)
+            {
+                for(int j= i + 1; j < pesi.Length; j++)
+                {
+                    if (eta[i] > eta[j])
+                    {
+                        int tempEta = eta[i];
+                        eta[i] = eta[j];
+                        eta[j] = tempEta;
+                        double tempPeso = pesi[i];
+                        pesi[i] = pesi[j];
+                        pesi[j] = tempPeso;
+                    }
+                }
+            }
         }
     }
 }
